@@ -115,7 +115,10 @@ if __name__ == "__main__":  # noqa: C901
     )
     parser.add_argument("-uuid", "--uuid", action="store_true", default=False, help="Ensure that the run has a unique ID")
     args = parser.parse_args()
+    from gym import register
 
+    import register_custom_envs
+    register_custom_envs.register_all_envs()
     # Going through custom gym packages to let them register in the global registory
     for env_module in args.gym_packages:
         importlib.import_module(env_module)
