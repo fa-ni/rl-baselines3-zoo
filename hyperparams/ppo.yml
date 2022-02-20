@@ -1,18 +1,42 @@
 Test_nik-v1:
   env_wrapper:
-    - src.main.rl.wrapper.action_wrapper3.ActionSpaceOption3Wrapper
+    #- src.main.rl.wrapper.action_wrapper3.ActionSpaceOption3Wrapper
     - src.main.rl.wrapper.obs_wrapper5.ObservationOption5Wrapper
+    - src.main.rl.wrapper.reward_wrapper3.RewardOption3Wrapper
   n_envs: 8
-  n_timesteps: !!float 1e5
-  policy: 'MlpPolicy'
-  n_steps: 32
-  batch_size: 256
+  batch_size: 64
+  n_steps: 2048
+  gamma: 0.99
+  learning_rate: 0.001216718814675719
+  ent_coef: 0.09060256206365265
+  clip_range: 0.3
+  n_epochs: 5
   gae_lambda: 0.8
-  gamma: 0.98
-  n_epochs: 20
-  ent_coef: 0.0
-  learning_rate: lin_0.001
-  clip_range: lin_0.2
+  max_grad_norm: 0.3
+  n_timesteps: 200000
+  vf_coef: 0.5399983502788293
+  policy: 'MlpPolicy'
+ # policy_kwargs: "dict(activation_fn=nn.Tanh)"
+
+Test_nik-scenario1-v1:
+  env_wrapper:
+    #- src.main.rl.wrapper.action_wrapper3.ActionSpaceOption3Wrapper
+    - src.main.rl.wrapper.obs_wrapper5.ObservationOption5Wrapper
+    - src.main.rl.wrapper.reward_wrapper3.RewardOption3Wrapper
+  n_envs: 8
+  batch_size: 64
+  n_steps: 2048
+  gamma: 0.99
+  learning_rate: 0.001216718814675719
+  ent_coef: 0.09060256206365265
+  clip_range: 0.3
+  n_epochs: 5
+  gae_lambda: 0.8
+  max_grad_norm: 0.3
+  n_timesteps: 200000
+  vf_coef: 0.5399983502788293
+  policy: 'MlpPolicy'
+  # policy_kwargs: "dict(activation_fn=nn.Tanh)"
 atari:
   env_wrapper:
     - stable_baselines3.common.atari_wrappers.AtariWrapper

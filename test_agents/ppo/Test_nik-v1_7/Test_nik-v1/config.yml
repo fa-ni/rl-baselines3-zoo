@@ -1,0 +1,33 @@
+!!python/object/apply:collections.OrderedDict
+- - - batch_size
+    - 16
+  - - clip_range
+    - 0.2
+  - - ent_coef
+    - 0.04637566919041698
+  - - env_wrapper
+    - - src.main.rl.wrapper.action_wrapper3.ActionSpaceOption3Wrapper
+      - src.main.rl.wrapper.obs_wrapper5.ObservationOption5Wrapper
+      - src.main.rl.wrapper.reward_wrapper2.RewardOption2Wrapper
+  - - gae_lambda
+    - 0.95
+  - - gamma
+    - 0.95
+  - - learning_rate
+    - 1.74716807303931e-05
+  - - max_grad_norm
+    - 5
+  - - n_envs
+    - 8
+  - - n_epochs
+    - 10
+  - - n_steps
+    - 16
+  - - n_timesteps
+    - 200000
+  - - policy
+    - MlpPolicy
+  - - policy_kwargs
+    - dict(activation_fn=nn.Tanh)
+  - - vf_coef
+    - 0.6442556532729223
